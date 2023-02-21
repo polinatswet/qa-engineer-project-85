@@ -1,5 +1,39 @@
 ---
 - summary: |
+    Проверка входа с помощью Github
+  requirement: |
+    Возможность авторизации через Github
+  prerequisites: >
+    браузер Google Chrome 110.0.5481.100
+    успешно зарегистрированный аккаунт Github
+    email address = ""
+    Password = ""
+  test-data: |
+   https://codebattle.hexlet.io/
+  steps:
+    - нажать кнопку Sign In with GitHub
+    - заполнить строку Username or email address
+    - заполянить строку Password
+    - нажать кнопку Sign in
+  expected-result: |
+    Пользователь авторизован и попадает на главную страницу с сообщением Successfully authenticated
+    
+- summary: |
+    Проверка отключения Github от профиля пользователя Сodebattle
+  requirement: |
+    Возможность авторизации через Github
+  prerequisites: >
+    браузер Google Chrome 110.0.5481.100
+    Пользователь прошел авторизацию с Github
+  test-data: |
+   https://codebattle.hexlet.io/settings
+  steps:
+    - перейти в раздел Settings
+    - нажать кнопку Unlink Github
+  expected-result: |
+    Кнопка Unlink Github активна, аккаунт Github отвязан, прекращено отображение ссылки на отключенный аккаунт
+    
+- summary: |
     Краткое описание тест-кейса
   requirement: |
     Тестируемое требование
@@ -10,29 +44,10 @@
     Тестовые данные
     Логин = ilona Пароль = password
   steps:
-    - Вводим логин
-    - Вводим пароль
-    - Нажимаем кнопку «Войти»
   expected-result: |
     Пользователь должен попасть на главную страницу
     
-- summary: |
-    Проверка входа по существующей почте и паролю
-  requirement: |
-    Возможность авторизации по почте и паролю
-  prerequisites: >
-    браузер Google Chrome 110.0.5481.100
-    успешно зарегистрированный аккаунт по почте и паролю
-  test-data: |
-   https://codebattle.hexlet.io/
-   Email = 
-   Password = 
-  steps:
-    - 
-    - 
-    -
-  expected-result: |
-    Успешный вход
+    
     
     functional:
   - Возможность авторизации по почте и паролю
