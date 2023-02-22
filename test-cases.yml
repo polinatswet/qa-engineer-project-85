@@ -61,7 +61,7 @@
     Успешный вход пользователя в аккаунт с восстановленным паролем
 
 - summary: |
-    Проверка настройки при 
+    Создание игры в Safari
   requirement: |
     Возможность настройки при создании лобби - сложность, задача, теги и временной лимит
   prerequisites: |
@@ -71,10 +71,26 @@
     https://codebattle.hexlet.io/#lobby
   steps:
   - нажать кнопку Create a game
-  - выбрать Level, Game Type, Time control, task by name or tags, Tags
   - нажать кнопку Create Battle
   expected-result: |
-    Открывается окно с кнопками настроек для баттла, после выбора создан баттл
+    Открывается окно создания игры, баттл создан
+
+- summary: |
+    Настройка параметров игры при создании баттла
+  requirement: |
+    Возможность настройки при создании лобби - сложность, задача, теги и временной лимит
+  prerequisites: |
+    браузер Google Chrome 110.0.5481.100
+    пользователь авторизован
+  test-data: |
+    https://codebattle.hexlet.io/#lobby
+  steps:
+  - нажать кнопку Create a game
+  - выбрать значение для Level, Game Type, Time control, task by name or tags, Tags
+  - нажать кнопку Create Battle
+  - сравнить соответствие параметров баттла выбранным значениям
+  expected-result: |
+    Созданный баттл соответствует заданным параметрам
 
 - summary: |
     Краткое описание тест-кейса
