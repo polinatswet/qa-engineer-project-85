@@ -60,22 +60,22 @@
   expected-result: |
     Успешный вход пользователя в аккаунт с восстановленным паролем
 
-
-
 - summary: |
-    Краткое описание тест-кейса
+    Проверка настройки при 
   requirement: |
     Возможность настройки при создании лобби - сложность, задача, теги и временной лимит
   prerequisites: |
-    браузер Google Chrome 110.0.5481.100
+    браузер Safari 14.1.2 (16611.3.10.1.3)
     пользователь авторизован
   test-data: |
-    Тестовые данные
-    Логин = ilona Пароль = password
+    https://codebattle.hexlet.io/#lobby
   steps:
+  - нажать кнопку Create a game
+  - выбрать Level, Game Type, Time control, task by name or tags, Tags
+  - нажать кнопку Create Battle
   expected-result: |
-    Пользователь &&&
-    
+    Открывается окно с кнопками настроек для баттла, после выбора создан баттл
+
 - summary: |
     Краткое описание тест-кейса
   requirement: |
