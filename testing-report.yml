@@ -1,0 +1,149 @@
+---
+- summary: |
+    Краткое описание тест-кейса. Пример: Проверка входа пользователя с существующими логином и паролем
+  status: fail
+
+- summary: |
+    Краткое описание тест-кейса. Пример: Проверка входа пользователя с существующими логином и паролем
+  status: pass
+  
+  - summary: |
+    Проверка входа с помощью Github
+  requirement: |
+    Возможность авторизации через Github
+  prerequisites: >
+    браузер Google Chrome 110.0.5481.100
+    успешно зарегистрированный аккаунт Github
+    email address = ""
+    Password = ""
+  test-data: |
+   https://codebattle.hexlet.io/
+  steps:
+    - нажать кнопку Sign In with GitHub
+    - заполнить строку Username or email address
+    - заполнить строку Password
+    - нажать кнопку Sign in
+  expected-result: |
+    Пользователь авторизован и попадает на главную страницу с сообщением Successfully authenticated
+    
+- summary: |
+    Проверка отключения Github от профиля пользователя Сodebattle
+  requirement: |
+    Возможность авторизации через Github
+  prerequisites: >
+    браузер Google Chrome 110.0.5481.100
+    Пользователь прошел авторизацию с Github
+  test-data: |
+   https://codebattle.hexlet.io/settings
+  steps:
+    - перейти в раздел Settings
+    - нажать кнопку Unlink Github
+  expected-result: |
+    Кнопка Unlink Github активна, аккаунт Github отвязан, прекращено отображение ссылки на отключенный аккаунт
+    
+- summary: |
+    Восстановление пароля по email
+  requirement: |
+    Возможность авторизации по почте и паролю
+  prerequisites: |
+    браузер Google Chrome 110.0.5481.100
+    Аккаунт зарегистрирован по email
+    Email = testdlahexlet@mail.ru"
+    Password = "Et21var!ant"
+  test-data: |
+    https://codebattle.hexlet.io/session/new?locale=en&next=%2F
+  steps:
+  - в окне авторизации нажать кнопку Forgot your password?
+  - ввести Email
+  - нажать кнопку Submit
+  - открыть страницу почты пользователя
+  - открыть письмо от noreply@codebattle-5f929.firebaseapp.com
+  - перейти по ссылке внутри письма
+  - в окне Reset your password ввести новый пароль
+  - нажать кнопку Save
+  - перейти на страницу (https://codebattle.hexlet.io/session/new?locale=en&next=%2Fremind_password)
+  - ввести Email
+  - ввести новый пароль
+  - нажать кнопку кнопку Submit
+  expected-result: |
+    Успешный вход пользователя в аккаунт с восстановленным паролем
+- summary: |
+    Создание игры в браузере Safari
+  requirement: |
+    Возможность настройки при создании лобби - сложность, задача, теги и временной лимит
+  prerequisites: |
+    браузер Safari 14.1.2 (16611.3.10.1.3)
+    пользователь авторизован
+  test-data: |
+    https://codebattle.hexlet.io/#lobby
+  steps:
+  - нажать кнопку Create a game
+  - нажать кнопку Create Battle
+  expected-result: |
+    Открывается окно создания игры, баттл создан
+- summary: |
+    Настройка параметров игры при создании баттла
+  requirement: |
+    Возможность настройки при создании лобби - сложность, задача, теги и временной лимит
+  prerequisites: |
+    браузер Google Chrome 110.0.5481.100
+    пользователь авторизован
+  test-data: |
+    https://codebattle.hexlet.io/#lobby
+  steps:
+  - нажать кнопку Create a game
+  - выбрать значение для Level, Game Type, Time control, task by name or tags, Tags
+  - нажать кнопку Create Battle
+  - сравнить соответствие параметров баттла выбранным значениям
+  expected-result: |
+    Созданный баттл соответствует заданным параметрам
+- summary: |
+    Смена языка программирования в баттле
+  requirement: |
+    Возможность выбора языка программирования в терминале баттла
+  prerequisites: |
+    браузер Google Chrome 110.0.5481.100
+    пользователь авторизован
+  test-data: |
+    https://codebattle.hexlet.io/#lobby
+  steps:
+  - нажать кнопку Create a game
+  - установить параметры игры
+  - нажать кнопку Create Battle
+  - во вкладке над терминалом в списке выбрать язык, отличающийся от заданного по умолчанию
+  - оценить смену языка в окне терминала
+  expected-result: |
+   Отображен и применяется в проверке решения язык, выбранный пользователем
+    
+- summary: |
+    Мультиязычность задачи баттла
+  requirement: |
+    Задачи доступны на английском или русском языке
+  prerequisites: |
+    браузер Google Chrome 110.0.5481.100
+    пользователь авторизован
+  test-data: |
+    https://codebattle.hexlet.io/#lobby
+  steps:
+  - нажать кнопку Create a game
+  - установить параметры игры
+  - нажать кнопку Create Battle
+  - в поле задачи открыть вкладку со списком языков
+  - выбрать RU
+  expected-result: |
+   Задача отображена на руском языке
+   
+- summary: |
+    Проверка трансляции баттла онлайн
+  requirement: |
+   Возможность просмотра баттла пользователями online
+  prerequisites: |
+    браузер Google Chrome 110.0.5481.100
+    пользователь авторизован
+  test-data: |
+    https://codebattle.hexlet.io/#lobby
+  steps:
+  - нажать вкладку LOBBY
+  - нажать кнопку Show напротив транслируемого баттла
+  expected-result: |
+   Пользователю доступен просмотр баттла и видно изменения в режиме реального времени
