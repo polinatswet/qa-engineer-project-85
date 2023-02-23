@@ -1,86 +1,25 @@
 ---
 - summary: |
-    Краткое описание тест-кейса. Пример: Проверка входа пользователя с существующими логином и паролем
-  status: fail
+    Проверка входа с помощью Github
+  status: pass
 
 - summary: |
-    Краткое описание тест-кейса. Пример: Проверка входа пользователя с существующими логином и паролем
-  status: pass
-  
-  - summary: |
-    Проверка входа с помощью Github
-  requirement: |
-    Возможность авторизации через Github
-  prerequisites: >
-    браузер Google Chrome 110.0.5481.100
-    успешно зарегистрированный аккаунт Github
-    email address = ""
-    Password = ""
-  test-data: |
-   https://codebattle.hexlet.io/
-  steps:
-    - нажать кнопку Sign In with GitHub
-    - заполнить строку Username or email address
-    - заполнить строку Password
-    - нажать кнопку Sign in
-  expected-result: |
-    Пользователь авторизован и попадает на главную страницу с сообщением Successfully authenticated
-    
-- summary: |
     Проверка отключения Github от профиля пользователя Сodebattle
-  requirement: |
-    Возможность авторизации через Github
-  prerequisites: >
-    браузер Google Chrome 110.0.5481.100
-    Пользователь прошел авторизацию с Github
-  test-data: |
-   https://codebattle.hexlet.io/settings
-  steps:
-    - перейти в раздел Settings
-    - нажать кнопку Unlink Github
-  expected-result: |
-    Кнопка Unlink Github активна, аккаунт Github отвязан, прекращено отображение ссылки на отключенный аккаунт
-    
+  status: fail
+  
 - summary: |
     Восстановление пароля по email
-  requirement: |
-    Возможность авторизации по почте и паролю
-  prerequisites: |
-    браузер Google Chrome 110.0.5481.100
-    Аккаунт зарегистрирован по email
-    Email = testdlahexlet@mail.ru"
-    Password = "Et21var!ant"
-  test-data: |
-    https://codebattle.hexlet.io/session/new?locale=en&next=%2F
-  steps:
-  - в окне авторизации нажать кнопку Forgot your password?
-  - ввести Email
-  - нажать кнопку Submit
-  - открыть страницу почты пользователя
-  - открыть письмо от noreply@codebattle-5f929.firebaseapp.com
-  - перейти по ссылке внутри письма
-  - в окне Reset your password ввести новый пароль
-  - нажать кнопку Save
-  - перейти на страницу (https://codebattle.hexlet.io/session/new?locale=en&next=%2Fremind_password)
-  - ввести Email
-  - ввести новый пароль
-  - нажать кнопку кнопку Submit
-  expected-result: |
-    Успешный вход пользователя в аккаунт с восстановленным паролем
+  status: pass
+  
 - summary: |
     Создание игры в браузере Safari
-  requirement: |
-    Возможность настройки при создании лобби - сложность, задача, теги и временной лимит
-  prerequisites: |
-    браузер Safari 14.1.2 (16611.3.10.1.3)
-    пользователь авторизован
-  test-data: |
-    https://codebattle.hexlet.io/#lobby
-  steps:
-  - нажать кнопку Create a game
-  - нажать кнопку Create Battle
-  expected-result: |
-    Открывается окно создания игры, баттл создан
+  status: fail
+  
+- summary: |
+    Настройка параметров игры при создании баттла
+  status: pass
+  
+
 - summary: |
     Настройка параметров игры при создании баттла
   requirement: |
