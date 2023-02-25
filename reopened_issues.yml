@@ -1,9 +1,2 @@
 ---
-issues:
-  - url: "https://github.com/hexlet-codebattle/codebattle/issues/1202"
-  - url: "ЪЪЪЪЪ"
-  
-  
-  укажите ссылки на issues с неисправленными багами.
-  Если новых багов нет, то пустой список баг-репортов будет выглядеть так:
-  issues: []
+issues: []
