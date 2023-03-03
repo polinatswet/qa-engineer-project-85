@@ -1,10 +1,10 @@
 ---
 - summary: |
-    Проверка входа с помощью Github
+    Проверка авторизации через Github
   status: pass
 
 - summary: |
-    Проверка отключения Github от профиля пользователя Сodebattle
+    Проверка отвязки аккаунта Github от профиля
   status: fail
   
 - summary: |
@@ -20,7 +20,7 @@
   status: pass
   
 - summary: |
-   Мультиязычность задачи баттла
+   Проверка смены локали для баттла
   status: pass
   
 - summary: |
