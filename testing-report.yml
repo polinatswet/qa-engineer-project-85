@@ -12,6 +12,10 @@
   status: pass
   
 - summary: |
+    Проверка отображения значка прокрутки в Safari
+  status: fail
+  
+- summary: |
     Создание игры в браузере Safari
   status: fail
   
